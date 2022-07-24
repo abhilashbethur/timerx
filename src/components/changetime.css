@@ -1,0 +1,47 @@
+.slider {
+  height: 40px;
+  width: 40vw;
+  border: 2px solid red;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.thumb {
+  background-color: ivory;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.hours {
+  display: flex;
+  margin-top: 20px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+span {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-div {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  font-size: large;
+  border: none;
+  border-radius: 10px;
+  height: 5vh;
+  width: 50%;
+}
