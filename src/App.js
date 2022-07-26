@@ -1,10 +1,11 @@
 import "./App.css";
 import { useEffect, useRef, useContext } from "react";
-
+import { Howl } from "howler";
 import "./components/changetime.css";
 import ChangeTime from "./components/ChangeTime";
 import DisplayTime from "./components/DisplayTime";
 import { TimerContext } from "./components/TimerContext";
+import soundSrc from "./ding.mp3";
 
 function App() {
   const {
@@ -22,8 +23,17 @@ function App() {
   const secondsref = useRef(seconds);
   const remainingSecondsref = useRef(remainingSeconds);
 
+  const callmySound = (src) => {
+    const sound = new Howl({
+      src,
+      html5: true,
+    });
+    sound.play();
+  };
+
   useEffect(() => {
     function switchMode() {
+      callmySound(soundSrc);
       const nextMode = modeRef.current === "work" ? "break" : "work";
       setmode(nextMode);
       modeRef.current = nextMode;
@@ -45,6 +55,7 @@ function App() {
     }
     const interval = setInterval(() => {
       if (seconds === 0 && remainingSeconds === 0) {
+        callmySound(soundSrc);
         console.log("time up");
         clearInterval(interval);
         return;
