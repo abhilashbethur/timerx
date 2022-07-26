@@ -5,7 +5,7 @@ import "react-circular-progressbar/dist/styles.css";
 import "./changetime.css";
 
 function DisplayTime() {
-  const { seconds, remainingSeconds, mode, setshowTimer, minutes, hours } =
+  const { seconds, remainingSeconds, mode, setshowTimer } =
     useContext(TimerContext);
 
   const onReset = () => {
