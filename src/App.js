@@ -53,7 +53,7 @@ function App() {
         return switchMode();
       }
       setseconds(seconds - 1);
-    }, 10);
+    }, 1000);
     return () => clearInterval(interval);
   }, [
     seconds,
