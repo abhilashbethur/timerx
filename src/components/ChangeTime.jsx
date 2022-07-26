@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import ReactSlider from "react-slider";
 import "./changetime.css";
+import { TimerContext } from "./TimerContext";
 
 function ChangeTime() {
-  const [hours, sethours] = useState(0);
-  const [minutes, setminutes] = useState(0);
+  const {
+    setseconds,
+    hours,
+    sethours,
+    minutes,
+    setminutes,
+    setremainingSeconds,
+    setshowTimer,
+  } = useContext(TimerContext);
+
+  const setTime = () => {
+    setshowTimer((showTimer) => !showTimer);
+
+    setseconds(600);
+    setremainingSeconds(hours * 3600 + minutes * 60 - 600);
+  };
   return (
     <div className="changetime">
       <div className="hours">
@@ -37,7 +52,9 @@ function ChangeTime() {
       </div>
       <span>{minutes} minutes</span>
       <div className="btn-div">
-        <button className="btn">Start</button>
+        <button className="btn" onClick={setTime}>
+          Start
+        </button>
       </div>
     </div>
   );
