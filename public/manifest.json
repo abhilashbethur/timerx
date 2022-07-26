@@ -8,11 +8,11 @@
   "start_url": "/",
   "icons": [
     {
-      "src":"maskable.png",
-      "sizes" : "196x196",
-      "type" : "image/png",
-      "purpose":"any maskable"
-    }
+      "src": "maskable.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
     {
       "src": "logo256.png",
       "sizes": "256x256",
