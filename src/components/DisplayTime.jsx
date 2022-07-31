@@ -5,7 +5,7 @@ import "react-circular-progressbar/dist/styles.css";
 import "./changetime.css";
 
 function DisplayTime() {
-  const { seconds, remainingSeconds, mode, setshowTimer } =
+  const { seconds, remainingSeconds, mode, setshowTimer, percentagetime } =
     useContext(TimerContext);
 
   const onReset = () => {
@@ -19,16 +19,7 @@ function DisplayTime() {
     displayminutes < 10 ? "0" + displayminutes : displayminutes;
   const showseconds =
     displayseconds < 10 ? "0" + displayseconds : displayseconds;
-
-  const percentage = Math.round(
-    (seconds /
-      (mode === "break"
-        ? 300
-        : remainingSeconds <= 1800
-        ? remainingSeconds
-        : 1500)) *
-      100
-  );
+  const percentage = Math.round((seconds / percentagetime) * 100);
 
   return (
     <div>

@@ -9,6 +9,7 @@ export const TimerProvider = (props) => {
   const [seconds, setseconds] = useState(0);
   const [remainingSeconds, setremainingSeconds] = useState(0);
   const [mode, setmode] = useState("work");
+  const [percentagetime, setpercentagetime] = useState(600);
 
   return (
     <TimerContext.Provider
@@ -25,6 +26,8 @@ export const TimerProvider = (props) => {
         setremainingSeconds,
         mode,
         setmode,
+        percentagetime,
+        setpercentagetime,
       }}
     >
       {props.children}
